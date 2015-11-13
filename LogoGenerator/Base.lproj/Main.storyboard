@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7OW-28-h3D">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="jIO-sr-D8v">
+            <objects>
+                <navigationController id="7OW-28-h3D" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vjz-Ep-l0u">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="baF-fu-KMR" kind="relationship" relationship="rootViewController" id="ynQ-D8-EmP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FpS-rQ-7ac" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-587" y="-81"/>
+        </scene>
+        <!--Image Generator-->
+        <scene sceneID="Vbk-WB-hQd">
+            <objects>
+                <viewController id="baF-fu-KMR" customClass="ViewController" customModule="LogoGenerator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="xO7-9y-UnD"/>
+                        <viewControllerLayoutGuide type="bottom" id="YWn-32-AJB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CDL-6u-MBY">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Put your text here" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nWd-vN-Jd2">
+                                <rect key="frame" x="20" y="72" width="466" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="5Pf-uw-yY4"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IgK-C2-Vhg">
+                                <rect key="frame" x="494" y="72" width="86" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="HNM-zz-IqJ"/>
+                                    <constraint firstAttribute="width" constant="86" id="UTG-AA-OcS"/>
+                                </constraints>
+                                <state key="normal" title="Generate"/>
+                                <connections>
+                                    <action selector="action_generate:" destination="baF-fu-KMR" eventType="touchUpInside" id="k6J-He-eCi"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ixk-pV-x3v">
+                                <rect key="frame" x="200" y="200" width="200" height="200"/>
+                                <color key="backgroundColor" red="1" green="0.63921568630000003" blue="0.62745098040000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="JL3-e6-nLa"/>
+                                    <constraint firstAttribute="width" constant="200" id="ZBk-xc-kPQ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="nWd-vN-Jd2" firstAttribute="leading" secondItem="CDL-6u-MBY" secondAttribute="leading" constant="20" id="9P6-aK-n9q"/>
+                            <constraint firstItem="IgK-C2-Vhg" firstAttribute="leading" secondItem="nWd-vN-Jd2" secondAttribute="trailing" constant="8" id="J0b-fD-a1z"/>
+                            <constraint firstItem="ixk-pV-x3v" firstAttribute="centerX" secondItem="CDL-6u-MBY" secondAttribute="centerX" id="aNS-9E-Lnk"/>
+                            <constraint firstAttribute="trailing" secondItem="IgK-C2-Vhg" secondAttribute="trailing" constant="20" id="bDX-dS-fRO"/>
+                            <constraint firstItem="nWd-vN-Jd2" firstAttribute="top" secondItem="xO7-9y-UnD" secondAttribute="bottom" constant="8" id="byj-8q-q6m"/>
+                            <constraint firstItem="IgK-C2-Vhg" firstAttribute="top" secondItem="xO7-9y-UnD" secondAttribute="bottom" constant="8" id="gyC-TB-mUh"/>
+                            <constraint firstItem="ixk-pV-x3v" firstAttribute="top" secondItem="nWd-vN-Jd2" secondAttribute="bottom" constant="98" id="jwh-1s-6wJ"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Image Generator" id="KIb-tY-LVK"/>
+                    <connections>
+                        <outlet property="img_image" destination="ixk-pV-x3v" id="XoN-FU-XIB"/>
+                        <outlet property="txt_field" destination="nWd-vN-Jd2" id="Mvz-gE-q6N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kuC-tH-WTV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="141" y="-72"/>
+        </scene>
+    </scenes>
+</document>
