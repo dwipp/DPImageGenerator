@@ -20,21 +20,21 @@ imageGen.textFont = UIFont(name: "HelveticaNeue", size: 80)
 // Set text color. The default is white
 imageGen.textColor = UIColor.whiteColor()
 
-// Set maximum character allowed inside image. The option are two and one. And two as default value.
+// Set maximum character allowed inside image. 
+// The option are two and one. And two as default value.
 imageGen.maxChar = maxCharacter.two
 
 // Set text. It is required.
 imageView.image = imageGen.imageGenerator("Dwi Putra")
 ```
 
-# Example
-![Screeshot](http://d.pr/i/17aGB)
+## Sample
+[![IMAGE ALT TEXT HERE](http://img.youtube.com/vi/hxBvk4Esj08/0.jpg)](http://www.youtube.com/watch?v=hxBvk4Esj08)
 
-# Installation 
+## Installation 
 
 Manual installation.
 Will be available on cocoapods soon.
 
-# Thanks To
-
-https://github.com/soffes/GradientView
+## Thanks To
+soffes --> https://github.com/soffes/GradientView
