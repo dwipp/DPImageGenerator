@@ -30,10 +30,10 @@ imageView.image = imageGen.imageGenerator("Dwi Putra")
 
 ## Sample
 
-![Screenshot](http://s4.postimg.org/5w9s8vqlp/i_OSputra27kenji11132015075025.png)
-![Screenshot](http://s4.postimg.org/oicjn438t/i_OSputra27kenji11132015075047.png)
+![Screenshot](http://s29.postimg.org/pnglt4snb/i_OSputra27kenji11132015075025.png)
+![Screenshot](http://s2.postimg.org/nuxvuceh5/i_OSputra27kenji11132015075047.png)
 
-[Youtube Sample](http://www.youtube.com/watch?v=hxBvk4Esj08)
+[This is the video sample](http://www.youtube.com/watch?v=hxBvk4Esj08)
 
 ## Installation 
 
