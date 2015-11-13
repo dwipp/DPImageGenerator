@@ -42,3 +42,7 @@ Will be available on cocoapods soon.
 
 ## Thanks To
 soffes --> https://github.com/soffes/GradientView
+
+## License
+
+DPImageGenerator is released under the MIT license. See LICENSE for details.
