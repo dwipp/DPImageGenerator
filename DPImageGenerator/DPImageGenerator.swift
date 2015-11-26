@@ -112,7 +112,7 @@ class DPImageGenerator: NSObject {
     
     
     func imageGenerator(text:String) -> UIImage {
-        UIGraphicsBeginImageContext(self.viewBuilder(text).frame.size)
+        UIGraphicsBeginImageContextWithOptions(self.viewBuilder(text).frame.size, false, UIScreen.mainScreen().scale)
         self.viewBuilder(text).layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let screenshot:UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
