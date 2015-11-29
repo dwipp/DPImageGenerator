@@ -12,20 +12,27 @@ This awesome library is wrote on swift 2.1
 let imageGen:DPImageGenerator = DPImageGenerator()
 
 // Set frame using UIImage frame. It's required.
-imageGen.imageFrame = img_image.frame
+imageGen.image_frame = img_image.frame
 
 // Set font for text inside image. The default is system font with font size 70.
-imageGen.textFont = UIFont(name: "HelveticaNeue", size: 80)
+imageGen.text_font = UIFont(name: "HelveticaNeue", size: 80)
 
 // Set text color. The default is white
-imageGen.textColor = UIColor.whiteColor()
+imageGen.text_color = UIColor.whiteColor()
 
 // Set maximum character allowed inside image. 
 // The option are two and one. And two as default value.
-imageGen.maxChar = maxCharacter.two
+imageGen.max_char = maxCharacter.two
 
 // Set text. It is required.
 imageView.image = imageGen.imageGenerator("Dwi Putra")
+
+/* Set dynamic gradient. 
+Gradient color will be changed for every generate (true). 
+Gradient color will be changed when it gets different char lenght (false). 
+The default is true
+*/
+imageGen.dynamic_gradient = false
 ```
 
 ## Sample
@@ -37,10 +44,11 @@ imageView.image = imageGen.imageGenerator("Dwi Putra")
 
 ## Installation 
 
-Manual installation.
+Manual installation. Just copy DPImageGenerator folder to your project.
 Will be available on cocoapods soon.
 
 ## Thanks To
+
 soffes --> https://github.com/soffes/GradientView
 
 ## License

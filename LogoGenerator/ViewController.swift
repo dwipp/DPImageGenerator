@@ -18,10 +18,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         img_image.layer.cornerRadius = 15
-        imageGen.imageFrame = img_image.frame
-        imageGen.textFont = UIFont(name: "HelveticaNeue", size: 80)
-        imageGen.textColor = UIColor.whiteColor()
-        imageGen.maxChar = maxCharacter.two
+        imageGen.image_frame = img_image.frame
+        imageGen.text_font = UIFont(name: "HelveticaNeue", size: 80)
+        imageGen.text_color = UIColor.whiteColor()
+        imageGen.max_char = maxCharacter.two
+        imageGen.dynamic_gradient = true
     }
 
     override func didReceiveMemoryWarning() {

@@ -8,37 +8,45 @@
 
 import UIKit
 
+// Enum for selecting max character allowed inside of image
 enum maxCharacter {
     case one
     case two
 }
 
 class DPImageGenerator: NSObject {
-    var imageFrame:CGRect?
-    var textColor:UIColor?
-    var textFont:UIFont?
-    var maxChar:maxCharacter = .two
+    var image_frame:CGRect?
+    var text_color:UIColor?
+    var text_font:UIFont?
+    var max_char:maxCharacter = .two
+    var dynamic_gradient:Bool = true
     
-    
-    private func viewBuilder(text:String) -> UIView {
+    private func viewBuilder(text:String, isDynamic:Bool) -> UIView {
         let color1:[String] = ["EF4DB6", "52EDC7", "55EFCB", "0D77EF", "5AD427", "87FC70", "FF9500", "C86EDF", "55EFCB"]
         let color2:[String] = ["C643FC", "5AC8FB", "5BCAFF", "81F3FD", "A4E786", "0BD318", "FF5E3A", "E4B7F0", "5BCAFF"]
         
-        let x = Int(arc4random_uniform(UInt32(color1.count)))
-        let defaultView = UIView(frame: imageFrame!)
+        let x:Int?
+        if isDynamic {
+            x = Int(arc4random_uniform(UInt32(color1.count)))
+        }else {
+            srandom(UInt32(text.characters.count))
+            x = Int(random()%color1.count)
+        }
+        
+        let defaultView = UIView(frame: image_frame!)
         let gradient: GradientView = GradientView()
         
-        let colors:[UIColor] = [self.colorWithHexString(color1[x]), self.colorWithHexString(color2[x])]
+        let colors:[UIColor] = [self.colorWithHexString(color1[x!]), self.colorWithHexString(color2[x!])]
         
         gradient.frame = defaultView.bounds
         gradient.colors = colors
         gradient.locations = [0.0 , 1.0]
         defaultView.addSubview(gradient)
         
-        let width_value = ((imageFrame?.width)! - 20)
-        let height_value = ((imageFrame?.height)! / 2)
-        let x_value = ((imageFrame?.width)! - width_value)/2
-        let y_value = ((imageFrame?.height)! - height_value)/2
+        let width_value = ((image_frame?.width)! - 20)
+        let height_value = ((image_frame?.height)! / 2)
+        let x_value = ((image_frame?.width)! - width_value)/2
+        let y_value = ((image_frame?.height)! - height_value)/2
         
         let initialName:UILabel = UILabel(frame: CGRectMake(x_value, y_value, width_value, height_value))
         var first_letter:String?
@@ -47,16 +55,16 @@ class DPImageGenerator: NSObject {
         
         var count=0
         for word in words {
-            if word.length > 0 && count < self.getMaxChar(maxChar) {
+            if word.length > 0 && count < self.getMaxChar(max_char) {
                 first_letter = word.substringToIndex(1)
                 first_character.appendString((first_letter?.uppercaseString)!)
                 count++
             }
         }
         initialName.text = first_character as String
-        initialName.textColor = self.getTextColor(self.textColor)
+        initialName.textColor = self.getTextColor(self.text_color)
         initialName.textAlignment = NSTextAlignment.Center
-        initialName.font = self.getTextFont(self.textFont)
+        initialName.font = self.getTextFont(self.text_font)
         defaultView.addSubview(initialName)
         return defaultView
     }
@@ -112,8 +120,8 @@ class DPImageGenerator: NSObject {
     
     
     func imageGenerator(text:String) -> UIImage {
-        UIGraphicsBeginImageContextWithOptions(self.viewBuilder(text).frame.size, false, UIScreen.mainScreen().scale)
-        self.viewBuilder(text).layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        UIGraphicsBeginImageContextWithOptions(self.viewBuilder(text, isDynamic: dynamic_gradient).frame.size, false, UIScreen.mainScreen().scale)
+        self.viewBuilder(text, isDynamic: dynamic_gradient).layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let screenshot:UIImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return screenshot
