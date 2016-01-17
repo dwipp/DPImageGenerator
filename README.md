@@ -39,7 +39,7 @@ imageGen.dynamic_gradient = false
 
 ![Screenshot](http://s29.postimg.org/pnglt4snb/i_OSputra27kenji11132015075025.png)
 ![Screenshot](http://s2.postimg.org/nuxvuceh5/i_OSputra27kenji11132015075047.png)
-
+![gif](https://github.com/dwipp/DPImageGenerator/blob/master/example-animation.gif)
 [This is the video sample](http://www.youtube.com/watch?v=hxBvk4Esj08)
 
 ## Installation 
